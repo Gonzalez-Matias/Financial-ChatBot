@@ -1,0 +1,9 @@
+flask
+openai
+pinecone
+ijson
+sentence_transformers
+tqdm
+joblib
+wordninja
+farm-haystack[inference]
