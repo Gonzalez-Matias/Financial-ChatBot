@@ -25,7 +25,7 @@ The Financial Chatbot project is aimed at developing an innovative chatbot that 
 
 - Extensive Document Vector Storage: Pinecone is employed to efficiently store and retrieve document vectors, enhancing the speed and accuracy of information retrieval.
 
-- User-friendly Interface: The chatbot will be deployed through a user-friendly interface, which could be a web application or a mobile app, making it easily accessible to users seeking financial advice.
+- User-friendly Interface: The chatbot will be deployed through a user-friendly interface making it easily accessible to users seeking financial advice.
 
 ## Technologies
 
@@ -45,7 +45,16 @@ Follow these steps to set up the Financial Chatbot project:
    <br>`pip install -r requirements.txt`<br>
 3. Configure Pinecone: Set up your Pinecone API keys and configurations. Refer to the [Pinecone documentation](https://www.pinecone.io/docs/) for guidance.
 4. Load all your pdf documents into pdf_documents folder
-5. Run load_docs script(from the main folder)
+5. Run load_docs script(from the project root):
    <br>`python3 scripts/load_docs.py`<br>
-6. Run load_docs script(from the main folder)
+6. Run process_data script(from the project root), that will create a unique json file with all the text chunks:
    <br>`python3 scripts/process_data.py`<br>
+7. Set env variables for Pinecone:
+   <br>`export PINECONE_API_KEY="YOUR_PINECINE_KEY"`  
+   `export PINECONE_ENV="YOUR_SERVER_LOCATION"`<br>
+8. Encode the text chunks and Create pinecone vector database by running create_vector_db(from the project root):
+   <br>`python3 scripts/create_vector_db.py`<br>
+9. Set env variables for OpenAI API:
+   <br>`export OPENAI_API_KEY="YOUR_OPENAI_API_KEY"`<br>
+10. Run the app:
+   <br>`python3 app.py`<br>
